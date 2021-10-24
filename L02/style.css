@@ -32,6 +32,16 @@ header{
     font-weight: 600;
 }
 
+.text2{
+    color: rgb(255, 255, 255);
+    left: 10%;
+    position: fixed;
+}
+.text2 p{
+    font-size: 10px;
+    font-weight: 400;
+ 
+}
 .text h1{
     font-size: 60px;
     line-height: 80px;
