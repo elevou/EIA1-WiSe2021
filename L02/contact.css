@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+body{
+    background-color: rgb(24, 24, 24);
+}
+
+header{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.titelbild img {
+    width: 300px;
+    height: 50px;
+    align-items: center;
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn{
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 1.25rem;
+    position: relative;
+    margin: 32px;
+    color: rgb(228, 148, 148);
+
+}
+/*Button 1*/
+
+.btn-1::after, .btn-1::before{
+    border: 3px solid;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.btn-1:hover::before{
+    transform: translate(5px, 5px);
+}
+
+.btn-1:hover::after{
+    transform: translate(-5px, -5px);
+}
+
+/*Button 2*/
+.btn-2::after, .btn-2::before{
+    border: 3px solid;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+    transition: transform 0.3s ease;
+}
+
+.btn-2:hover::before{
+    transform: translate(5px, 5px);
+}
+
+.btn-2:hover::after{
+    transform: translate(-5px, -5px);
+}
+
+
+/*Button 3*/
+.btn-3::after, .btn-3::before{
+    border: 3px solid;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: -3;
+    transition: transform 0.3s ease;
+}
+
+.btn-3:hover::before{
+    transform: translate(5px, 5px);
+}
+
+.btn-3:hover::after{
+    transform: translate(-5px, -5px);
+}
+
+.verlinkung{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verlinkung table{
+    text-align:center;
+    width:20%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.verlinkung td{
+    font-style: italic;
+    color: white;
+    font-size: 70%;
+}
+        .AE{
+            margin-right: 70px;
+        }
+        .bl-1{
+            margin-right: 70px;
+        width: 200px;
+        height: auto;
+        }
+
+        .bl-2{
+        width: 200px;
+        height: auto;
+        }
+
+       
