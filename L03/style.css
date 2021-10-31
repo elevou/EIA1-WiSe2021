@@ -1,0 +1,180 @@
+body{
+    font-family: sans-serif;
+    background-image: url(../L03/bg.png);
+}
+/* Buttons */
+#buttons{
+    position: relative;
+    left: 60%;
+    margin-top: -10px;
+    border: 1px transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: black;
+    width: fit-content;
+    padding: 5px;
+}
+a{
+    padding: 5px;
+    font-family:sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    transition: 0,4s;
+}
+.active {
+    color: #b63514;
+  }
+
+/* Header */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B63514;
+    width: 800px;
+    height: 800px;
+    border-radius: 400px;
+    border: 1px transparent;
+    margin: 0 auto;
+    margin-top: -375px;
+}
+   
+.container p{
+    background-image: url(../L03/bg.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 180px;
+    font-weight: 600;
+    letter-spacing: -7px;
+    margin-top: 300px;
+}
+
+        #text p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top:-290px;
+            margin-left: -100px;
+            font-size: 65px;
+            font-weight: 600;
+            background-image: url(../L03/bg.png);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #text2 p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            margin-left: 15%;
+            margin-top: 0px;
+            color: white;
+            font-size: 13px;
+        }
+
+        #icon{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: auto;
+            margin-left:  47%;
+            margin-top: -10px;
+            opacity: 50%;
+        }
+      #logo{
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 35%;
+        margin-top: -100px;
+        width: 90px;
+        height: auto;
+      }
+/* Main */
+#main1{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    width: auto;
+    padding: -1px 0px 0px 0px;
+}
+video { 
+    display: block;
+    width: auto; 
+    padding: -1px 0px 0px 0px;
+}
+#text{
+    margin-left: 24%;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(184, 53, 20);
+}
+
+/* Main-2 */
+#frm{
+    margin-left: 24%;
+    padding: 5px;
+}
+form input{
+  height: auto;
+  border: none;
+  margin-bottom: 5px;
+  background-color: lightgrey;
+  padding: 8px;
+ 
+}
+.formular p {
+    font-family: sans-serif;
+    color: lightgrey;
+    font-size: 12px;
+}
+
+.formular a {
+    font-family: sans-serif;
+    color: lightgrey;
+    font-size: 12px;
+}
+
+form textarea {
+  width: 400px;
+  height: auto;
+  border: none;
+  margin-bottom: 5px;
+  background-color: lightgrey;
+  padding: 8px;
+}
+form ::placeholder {
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.formular button {
+    background-color: lightgrey;
+    border: 1px transparent;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+/* Main-3 */
+.main3 p{
+    margin-left: 24%;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
