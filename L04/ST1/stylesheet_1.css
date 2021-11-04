@@ -1,0 +1,62 @@
+body{
+    background-image: url(../ST1/bilder/bg.png);
+}
+.container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 170px;
+    margin: 0 auto;
+    width: 600px;
+}
+.text{
+    color: white;
+    z-index: 2;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+}
+.kasten{
+    position: absolute;
+    top: 0px;
+}
+.pinguin{
+    position: absolute;
+    top: 220px;
+    left: 470px;
+}
+.busch{
+    position: absolute;
+    top: -60px;
+    left: -60px;
+}
+
+.buttons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 500px;
+    margin-top: -10px;
+    border: 1px transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: black;
+    width: fit-content;
+    padding: 5px;
+}
+a{
+    padding: 5px;
+    font-family:sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    transition: 0,4s;
+}
+.active {
+    color: #b63514;
+  }

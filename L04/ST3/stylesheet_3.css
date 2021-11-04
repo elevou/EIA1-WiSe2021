@@ -1,0 +1,116 @@
+body{
+    background-image: url(../ST3/Bilder/bg.png);
+}
+.container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 170px;
+    margin: 0 auto;
+    width: 600px;
+}
+.kasten{
+    position: absolute;
+    top: 0px;
+}
+.text{
+    color: white;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+/* Stern-1 */
+.stern-1{
+    position: absolute;
+    left: 50px;
+    top: 250px;
+}
+.stern-1-hover{
+    position: absolute;
+    left: 50px;
+    top: 250px;
+    opacity: 0%;
+}
+.stern-1-hover:hover{
+    transition: 0.4s;
+    opacity: 100%;
+}
+/* Stern-2 */
+.stern-2{
+    position: absolute;
+    left: 200px;
+    top: 150px;
+}
+.stern-2-hover{
+    position: absolute;
+    left: 200px;
+    top: 150px;
+    opacity: 0%;
+}
+.stern-2-hover:hover{
+    transition: 0.4s;
+    opacity: 100%;
+}
+/* Stern-3 */
+.stern-3{
+    position: absolute;
+    left: 300px;
+    top: 290px;
+}
+.stern-3-hover{
+    position: absolute;
+    left: 300px;
+    top: 290px;
+    opacity: 0%;
+}
+.stern-3-hover:hover{
+    transition: 0.4s;
+    opacity: 100%;
+}
+/* Stern-4 */
+.stern-4{
+    position: absolute;
+    left: 450px;
+    top: 200px;
+}
+.stern-4-hover{
+    position: absolute;
+    left: 450px;
+    top: 200px;
+    opacity: 0%;
+}
+.stern-4-hover:hover{
+    transition: 0.4s;
+    opacity: 100%;
+}
+
+.buttons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 500px;
+    margin-top: -10px;
+    border: 1px transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: black;
+    width: fit-content;
+    padding: 5px;
+}
+a{
+    padding: 5px;
+    font-family:sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    transition: 0,4s;
+}
+.active {
+    color: #b63514;
+  }

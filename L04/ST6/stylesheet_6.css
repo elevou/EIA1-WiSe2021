@@ -1,0 +1,68 @@
+body{
+    background-image: url(../ST6/bilder/bg.png);
+    color: white;
+}
+.container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 170px;
+    margin: 0 auto;
+    width: 600px;
+}
+.kasten{
+    position: absolute;
+    top: 0px;
+}
+.headline{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+.text{
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    width: 500px;
+    columns: 2;
+    column-gap: 20px;
+}
+.text-2{
+    position: absolute;
+    top: 230px;
+    left: 50px;
+    width: 500px;
+    columns: 3;
+    column-gap: 20px;
+}
+
+.buttons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 500px;
+    margin-top: -10px;
+    border: 1px transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: black;
+    width: fit-content;
+    padding: 5px;
+}
+a{
+    padding: 5px;
+    font-family:sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    transition: 0,4s;
+}
+.active {
+    color: #b63514;
+  }
+

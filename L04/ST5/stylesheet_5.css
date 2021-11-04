@@ -1,0 +1,61 @@
+body{
+    background-image: url(../ST5/Bilder/bg.png);
+}
+
+.container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 170px;
+    margin: 0 auto;
+    width: 600px;
+}
+.kasten{
+    position: absolute;
+    top: 0px;
+}
+.text{
+        color: white;
+        z-index: 2;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+}
+.formular{
+    position: absolute;
+    top: 120px;
+    left: 50px;
+}
+form label{
+    color: white;
+}
+
+.buttons{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 500px;
+    margin-top: -10px;
+    border: 1px transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: black;
+    width: fit-content;
+    padding: 5px;
+}
+a{
+    padding: 5px;
+    font-family:sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    transition: 0,4s;
+}
+.active {
+    color: #b63514;
+  }
