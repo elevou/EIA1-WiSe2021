@@ -30,6 +30,11 @@ form label{
     color: white;
 }
 
+textarea{
+    max-width:500px;
+    max-height:70px; 
+}
+
 .buttons{
     position: relative;
     margin-left: auto;
