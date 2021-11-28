@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+}
+
+#flaeche{
+    height: 150px;
+    width: 150px;
+    border: 1px black;
+    border-radius: 15px;
+}
+
+.drumpad{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 480px;
+    padding: 60px;
+}
+
+.dreieck{
+    margin: auto;
+}
+
+.box :hover{
+    transform: scale(95%);
+}
+
+.btn1, .btn2, .btn3{
+    background: linear-gradient(#1E90FF, #105394);
+}
+
+.btn4, .btn5,.btn6, .btn7{
+    background: linear-gradient(#FF34B3, #A31D71);
+}
+
+.btn8, .btn9{
+    background: linear-gradient(#FF7F24, #CC651D);
+}
