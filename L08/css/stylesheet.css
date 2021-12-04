@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+}
+
+.drumpad{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 480px;
+    padding: 60px;
+}
+
+#knopf{
+    height: 150px;
+    width: 150px;
+    border: 1px black;
+    border-radius: 15px;
+    margin: 3px;
+}
+
+/* Button Color */
+.btn1, .btn2, .btn3{
+    background: linear-gradient(#1E90FF, #105394);
+}
+.btn4, .btn5,.btn6, .btn7{
+    background: linear-gradient(#FF34B3, #A31D71);
+}
+.btn8, .btn9{
+    background: linear-gradient(#FF7F24, #CC651D);
+}
+
+/* Button hover-transition */
+.firstrow :hover{
+    transform: scale(90%);
+}
+.secondrow :hover{
+    transform: scale(90%);
+}
+.thirdrow :hover{
+    transform: scale(90%);
+}
+
+
+/* */
+.fas, .far{
+    padding: 25px;
+}
+.menuleiste{
+    margin: auto;
+    font-size: 70px;
+    color:darkslateblue;
+}
+.menuleiste :hover {
+    opacity: 50%;
+}
