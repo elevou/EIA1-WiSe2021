@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
-    <link rel="stylesheet" href="../L09/css/stylesheet.css">
+    <title>ToDo Liste</title>
+    <link rel="stylesheet" href="../L09/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <style src="../L09/script/script.js"></style>
+    <script src="script/script.js" defer></script>
 </head>
 <body>
-    <div class="app">
-        <div id="headline">   
-        <h1>ToDo App</h1>
-        <h2><span id="amount">0</span> in total</h2>
-        </div>
-        <input id="eingabeText" type="text" placeholder="Add another task">
+<div class="app">
+    <h1>ToDo Liste</h1>
+    <h4> <span id="amount"> 0 in total</span></h4>
 
-        <div id="addTask">
-    
-        </div>
-    </div> 
-</div>
+    <div class="taskbox" id="taskbox">
+        <input type="text" id="textfeld" placeholder="Add another task">
+        <i id="btn" class="fas fa-plus"></i>
+    </div>
+</div> 
 </body>
 </html>

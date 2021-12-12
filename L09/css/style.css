@@ -1,0 +1,110 @@
+body {
+    background-color: #b9b9b9;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 80px;
+    color: #2b2826;
+    
+}
+
+h4 {
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #2b2826;
+    position: absolute;
+    top: 140px;
+    left: 130px;
+}
+
+.app {
+    width: 460px;
+    height: 460px;
+    position: absolute;
+    margin: 5%;
+    top: 5%;
+    left: 20%;
+    margin-right:-50%;
+  
+}
+
+.taskbox {
+    position: absolute;
+    margin-left: 10%;
+    top: 230px;
+    left: -70px;
+}
+
+#btn {
+    color: #6d2a44;
+    font-size: 25px;
+    position: absolute;
+    top: 5px;
+    left: 420px;
+}
+
+#textfeld {
+    color: #ffffff;
+    left: 20px;
+    font-size: 20px;
+    border: 0px;
+    width: 400px;
+    height: 40px;
+}
+
+input {
+    background-color: #862e61; ;
+    border-radius: 10px;
+    border: 40px;
+    border-color: rgb(231, 231, 231);
+}
+
+#neuesDivBox {
+    font-family: sans-serif;
+    font-size: 20px;
+    float: center;
+    margin-top: 7px;
+    color: #2b2826;
+    background-color: #eca0b9; 
+    border-radius: 10px;
+    width: 404px;
+    height: 40px;
+}
+
+#text {
+    position: relative;
+    font-size: 20px;
+    margin-top: 100%;
+    margin-left: 35px;
+    margin-bottom: 30px;
+    
+}
+
+.fa-trash {
+    font-size: 20px;
+    position: absolute;
+    right: 13px;
+    margin-top: 10px;
+}
+
+.fa-circle {
+    font-size: 20px;
+    position: absolute;
+    margin-top: 10px;
+    left: 9px;
+    width: 20px;
+    height: 45px; 
+    opacity : 50%;
+}
+
+.fa-check-circle {
+    font-size: 20px;
+    position: absolute;
+    margin-top: 10px;
+    left: 9px;
+    width: 20px;
+    height: 45px;
+}

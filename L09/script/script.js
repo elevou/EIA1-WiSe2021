@@ -1,50 +1,57 @@
-window.addEventListener("load", function () {
+var L09;
+(function (L09) {
     // Variable für die Aufzählung der ToDos
     let counter = 0;
-    //
-    let iTask = document.querySelector("#eingabeText");
-    // Hinzufügen einer neuen ToDo nach drücken der Enter-Taste
-    document.querySelector("#einagbeText").addEventListener("keydown", function (event) {
-        if (event.keyCode == 13) {
-            newTask();
-        }
-    });
+    let iTask = document.querySelector("#textfeld");
+    let addTask = document.getElementById("taskbox");
+    // Eventlistener für das Hinzufügen einer neuen ToDo
+    document.querySelector("#btn").addEventListener("click", newTask);
     function newTask() {
         // Counter für Anzahl von ToDos
         counter++;
-        document.querySelector("#amount").innerHTML = counter + "in total";
-        const task = document.querySelector("#addTask");
-        const pTask = document.createElement("p");
-        const circle = document.createElement("i");
-        const trash = document.createElement("i");
-        const check = document.createElement("i");
-        // define icons: circle + trash
-        circle.setAttribute("class", "far fa-circle");
-        trash.setAttribute("class", "far fa-trash-alt");
-        pTask.innerHTML = iTask.value;
-        task.appendChild(trash);
-        task.appendChild(circle);
-        task.appendChild(pTask);
+        document.querySelector("#amount").innerHTML = String(counter + " in total");
+        // Input-Feld wird geleert
         iTask.value = "";
-        trash.addEventListener("click", function () {
-            counter--;
-            document.querySelector("#count").innerHTML = counter + "in total";
-            pTask.remove();
-            this.remove();
-            trash.remove();
-            this.remove();
-            circle.remove();
-            this.remove();
-        });
-        circle.addEventListener("click", function () {
-            this.appendChild(check);
-            if (check.getAttribute("class") == "fas fa-check") {
-                check.setAttribute("class", "");
+        // 
+        let task = document.createElement("h7");
+        let trash = document.createElement("div");
+        let check = document.createElement("div");
+        let neuesDiv = document.createElement("div");
+        task.innerHTML = iTask.value;
+        //
+        task.id = "text";
+        neuesDiv.id = "neuesDivBox";
+        check.className = "far fa-circle";
+        trash.className = "fas fa-trash";
+        //
+        addTask.appendChild(neuesDiv);
+        neuesDiv?.appendChild(check);
+        neuesDiv.appendChild(task);
+        neuesDiv?.appendChild(trash);
+        addTask?.appendChild(neuesDiv);
+        check.addEventListener("click", checkboxClick);
+        // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
+        function checkboxClick() {
+            if (check.getAttribute("class") == "far fa-check-circle") {
+                check.setAttribute("class", "far fa-circle");
             }
             else {
-                check.setAttribute("class", "fas fa-check");
+                check.setAttribute("class", "far fa-check-circle");
             }
-        });
+        }
+        // Eventlsitener für Trash-Btn
+        trash.addEventListener("click", deleteToDo);
+        // Delete-Funktion
+        function deleteToDo() {
+            neuesDiv.parentElement.removeChild(neuesDiv);
+            counter--;
+            document.querySelector("#amount").innerHTML = String(counter + " in total");
+        }
     }
-});
+    document.addEventListener("keydown", function (event) {
+        if (event.key == "Enter") {
+            newTask();
+        }
+    });
+})(L09 || (L09 = {}));
 //# sourceMappingURL=script.js.map

@@ -1,58 +1,71 @@
-window.addEventListener("load", function(): void {
+namespace L09 {
+
     // Variable für die Aufzählung der ToDos
     let counter: number = 0;
-    //
-    let iTask: HTMLInputElement = document.querySelector("#eingabeText");
+
+    let iTask: HTMLInputElement = document.querySelector("#textfeld");
+    let addTask: HTMLElement = document.getElementById("taskbox");
+   
+    // Eventlistener für das Hinzufügen einer neuen ToDo
+    document.querySelector("#btn").addEventListener("click", newTask);
 
 
-   // Hinzufügen einer neuen ToDo nach drücken der Enter-Taste
-    document.querySelector("#einagbeText").addEventListener("keydown", function(event:  KeyboardEvent): void {
-        if (event.key == "Enter") { 
+    function newTask (): void {
+
+        // Counter für Anzahl von ToDos
+        counter++; 
+        document.querySelector("#amount").innerHTML = String( counter + " in total");
+
+        // Input-Feld wird geleert
+        iTask.value = "";
+
+        // 
+        let task: HTMLElement = document.createElement("h7");
+        let trash: HTMLElement = document.createElement("div");
+        let check: HTMLElement = document.createElement("div");
+        let neuesDiv: HTMLElement = document.createElement("div");
+    
+        task.innerHTML = iTask.value;
+
+        //
+        task.id = "text";
+        neuesDiv.id = "neuesDivBox";
+        check.className = "far fa-circle";
+        trash.className = "fas fa-trash";
+
+        //
+        addTask.appendChild(neuesDiv);
+        neuesDiv?.appendChild(check);
+        neuesDiv.appendChild(task);
+        neuesDiv?.appendChild(trash);    
+        addTask?.appendChild(neuesDiv);
+
+        check.addEventListener("click", checkboxClick);
+
+        // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
+        function checkboxClick (): void {
+            
+            if (check.getAttribute("class") == "far fa-check-circle") {
+                check.setAttribute("class", "far fa-circle"); }
+            else {
+                check.setAttribute("class", "far fa-check-circle"); 
+            }    
+        }
+        
+        // Eventlsitener für Trash-Btn
+        trash.addEventListener("click", deleteToDo);
+
+        // Delete-Funktion
+        function deleteToDo (): void {
+            neuesDiv.parentElement.removeChild(neuesDiv);   
+            counter--;
+            document.querySelector("#amount").innerHTML = String( counter + " in total");
+        }
+    }
+
+    document.addEventListener("keydown", function (event: KeyboardEvent): void { 
+        if (event.key == "Enter") {
         newTask();
         }
     });
-
-   
-
-    function newTask(): void {
-        // Counter für Anzahl von ToDos
-        counter ++;
-        document.querySelector("#amount").innerHTML = counter + "in total";
-
-        const task: HTMLDivElement = document.querySelector("#addTask");
-        const pTask: HTMLParagraphElement = document.createElement("p");
-        const circle: HTMLElement = document.createElement("i");
-        const trash: HTMLElement = document.createElement("i");
-        const check: HTMLElement = document.createElement("i");
-        
-        // define icons: circle + trash
-        circle.setAttribute("class", "far fa-circle");
-        trash.setAttribute("class", "far fa-trash-alt");
-
-        pTask.innerHTML = iTask.value;
-
-        task.appendChild(trash);
-        task.appendChild(circle);
-        task.appendChild(pTask);
-
-        iTask.value = "";
-
-        trash.addEventListener("click", function(): void {
-            counter --;
-            document.querySelector("#count").innerHTML = counter + "in total";
-            pTask. remove(); this.remove();
-            trash. remove(); this.remove();
-            circle. remove(); this.remove();
-        });
-
-        circle.addEventListener("click", function(): void {
-            this.appendChild(check);
-            if (check.getAttribute("class") == "fas fa-check") {check.setAttribute("class", ""); }
-                else {check.setAttribute("class", "fas fa-check"); }
-        });
-    
-
-    }
-
-
-});
+}
