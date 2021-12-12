@@ -3,9 +3,10 @@ namespace L09 {
     // Variable für die Aufzählung der ToDos
     let counter: number = 0;
 
-    let iTask: HTMLInputElement = document.querySelector("#textfeld");
-    let addTask: HTMLElement = document.getElementById("taskbox");
-   
+    // Variable für den Input
+    let input: HTMLInputElement = document.querySelector("#textfield");
+
+
     // Eventlistener für das Hinzufügen einer neuen ToDo
     document.querySelector("#btn").addEventListener("click", newTask);
 
@@ -14,58 +15,67 @@ namespace L09 {
 
         // Counter für Anzahl von ToDos
         counter++; 
-        document.querySelector("#amount").innerHTML = String( counter + " in total");
+        document.querySelector("#todoAmount").innerHTML = String( counter + " in total");
 
-        // Input-Feld wird geleert
-        iTask.value = "";
 
-        // 
-        let task: HTMLElement = document.createElement("h7");
-        let trash: HTMLElement = document.createElement("div");
-        let check: HTMLElement = document.createElement("div");
-        let neuesDiv: HTMLElement = document.createElement("div");
-    
-        task.innerHTML = iTask.value;
+        let eingabefeld: HTMLElement = document.createElement("p");
+        eingabefeld.innerHTML = input.value;
+
+        // Input leeren
+        input.value = "";
 
         //
-        task.id = "text";
-        neuesDiv.id = "neuesDivBox";
+        let task: HTMLElement = document.getElementById("task");
+        let check: HTMLDivElement = document.createElement("div");
+        let trash: HTMLDivElement = document.createElement("div");
+            /* Neues div für task*/ 
+        let wrapper: HTMLDivElement = document.createElement("div");
+
+        wrapper.textContent = "";
+
+        // Append Elemente 
+        task.appendChild(wrapper);
+        wrapper.appendChild(eingabefeld);
+        wrapper?.appendChild(check);
+        wrapper?.appendChild(trash);    
+        task?.appendChild(wrapper);
+        
+        // Id bzw. Klassen zuweisung
+        eingabefeld.id = "eingabe";
+        wrapper.id = "neuesDiv";
         check.className = "far fa-circle";
         trash.className = "fas fa-trash";
 
         //
-        addTask.appendChild(neuesDiv);
-        neuesDiv?.appendChild(check);
-        neuesDiv.appendChild(task);
-        neuesDiv?.appendChild(trash);    
-        addTask?.appendChild(neuesDiv);
-
-        check.addEventListener("click", checkboxClick);
-
-        // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
-        function checkboxClick (): void {
-            
+            /*Eventlistener für die Check(erlefigt)-Box*/
+        check.addEventListener("click", erledigteToDos);
+            /* Fkt die ToDo als erledigt markiert - counter wird um 1 erhöht wenn ToDo hinzukommt*/
+        function erledigteToDos (): void {
             if (check.getAttribute("class") == "far fa-check-circle") {
                 check.setAttribute("class", "far fa-circle"); }
             else {
                 check.setAttribute("class", "far fa-check-circle"); 
             }    
         }
-        
-        // Eventlsitener für Trash-Btn
-        trash.addEventListener("click", deleteToDo);
 
-        // Delete-Funktion
+        // 
+           /* Eventlistener für den Mülleimer*/
+        trash.addEventListener("click", deleteToDo);
+            /*Fkt die ToDo löscht nach klick auf Mülleimer - counter wird um 1 verringert wenn ToDo gelöscht wird*/
         function deleteToDo (): void {
-            neuesDiv.parentElement.removeChild(neuesDiv);   
+            wrapper.parentElement.removeChild(wrapper); 
             counter--;
-            document.querySelector("#amount").innerHTML = String( counter + " in total");
+            document.querySelector("#todoAmount").innerHTML = String( counter + " in total");
         }
+
     }
 
+    // Neue ToDo wird hinzugefügt nach drücken der Entertaste
     document.addEventListener("keydown", function (event: KeyboardEvent): void { 
         if (event.key == "Enter") {
         newTask();
         }
     });
+
+
 }

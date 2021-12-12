@@ -2,36 +2,41 @@ var L09;
 (function (L09) {
     // Variable für die Aufzählung der ToDos
     let counter = 0;
-    let iTask = document.querySelector("#textfeld");
-    let addTask = document.getElementById("taskbox");
+    // Variable für den Input
+    let input = document.querySelector("#textfield");
     // Eventlistener für das Hinzufügen einer neuen ToDo
     document.querySelector("#btn").addEventListener("click", newTask);
     function newTask() {
         // Counter für Anzahl von ToDos
         counter++;
-        document.querySelector("#amount").innerHTML = String(counter + " in total");
-        // Input-Feld wird geleert
-        iTask.value = "";
-        // 
-        let task = document.createElement("h7");
-        let trash = document.createElement("div");
-        let check = document.createElement("div");
-        let neuesDiv = document.createElement("div");
-        task.innerHTML = iTask.value;
+        document.querySelector("#todoAmount").innerHTML = String(counter + " in total");
+        let eingabefeld = document.createElement("p");
+        eingabefeld.innerHTML = input.value;
+        // Input leeren
+        input.value = "";
         //
-        task.id = "text";
-        neuesDiv.id = "neuesDivBox";
+        let task = document.getElementById("task");
+        let check = document.createElement("div");
+        let trash = document.createElement("div");
+        /* Neues div für task*/
+        let wrapper = document.createElement("div");
+        wrapper.textContent = "";
+        // Append Elemente 
+        task.appendChild(wrapper);
+        wrapper.appendChild(eingabefeld);
+        wrapper?.appendChild(check);
+        wrapper?.appendChild(trash);
+        task?.appendChild(wrapper);
+        // Id bzw. Klassen zuweisung
+        eingabefeld.id = "eingabe";
+        wrapper.id = "neuesDiv";
         check.className = "far fa-circle";
         trash.className = "fas fa-trash";
         //
-        addTask.appendChild(neuesDiv);
-        neuesDiv?.appendChild(check);
-        neuesDiv.appendChild(task);
-        neuesDiv?.appendChild(trash);
-        addTask?.appendChild(neuesDiv);
-        check.addEventListener("click", checkboxClick);
-        // Bei Klick auf Kreis wird ein Haken hinzugefügt; erneuter Klick wird der Haken entfernt
-        function checkboxClick() {
+        /*Eventlistener für die Check(erlefigt)-Box*/
+        check.addEventListener("click", erledigteToDos);
+        /* Fkt die ToDo als erledigt markiert - counter wird um 1 erhöht wenn ToDo hinzukommt*/
+        function erledigteToDos() {
             if (check.getAttribute("class") == "far fa-check-circle") {
                 check.setAttribute("class", "far fa-circle");
             }
@@ -39,15 +44,17 @@ var L09;
                 check.setAttribute("class", "far fa-check-circle");
             }
         }
-        // Eventlsitener für Trash-Btn
+        // 
+        /* Eventlistener für den Mülleimer*/
         trash.addEventListener("click", deleteToDo);
-        // Delete-Funktion
+        /*Fkt die ToDo löscht nach klick auf Mülleimer - counter wird um 1 verringert wenn ToDo gelöscht wird*/
         function deleteToDo() {
-            neuesDiv.parentElement.removeChild(neuesDiv);
+            wrapper.parentElement.removeChild(wrapper);
             counter--;
-            document.querySelector("#amount").innerHTML = String(counter + " in total");
+            document.querySelector("#todoAmount").innerHTML = String(counter + " in total");
         }
     }
+    // Neue ToDo wird hinzugefügt nach drücken der Entertaste
     document.addEventListener("keydown", function (event) {
         if (event.key == "Enter") {
             newTask();
