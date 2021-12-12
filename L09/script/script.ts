@@ -7,7 +7,7 @@ window.addEventListener("load", function(): void {
 
    // Hinzufügen einer neuen ToDo nach drücken der Enter-Taste
     document.querySelector("#einagbeText").addEventListener("keydown", function(event:  KeyboardEvent): void {
-        if (event.keyCode == 13) { 
+        if (event.key == "Enter") { 
         newTask();
         }
     });
